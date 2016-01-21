@@ -8,7 +8,7 @@ namespace ReceptPage.Controllers
 {
     public class ReceptsController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Published()
         {
             return View();
         }

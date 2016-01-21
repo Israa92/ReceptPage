@@ -1,1 +1,42 @@
-﻿
+﻿@model ReceptPage.Models.CreateReceptViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create</title>
+</head>
+<body>
+    <h1>Show us your ideas</h1>
+    <div id="content">
+        <form asp-controller="Home" asp-action="Create">
+
+            <label asp-for="Name"></label>
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+            <br />
+            <br />
+            <label asp-for="Age"></label>
+            <input asp-for="Age" />
+            <span asp-validation-for="Age"></span>
+            <br />
+            <br />
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+            <br />
+            <br />
+            <label asp-for="Ingredients"></label>
+            <input asp-for="Ingredients" />
+            <span asp-validation-for="Ingredients"></span>
+            <br />
+            <br />
+            <label asp-for="HowToDo"></label>
+            <input asp-for="HowToDo" />
+            <span asp-validation-for="HowToDo"></span>
+            <br />
+            <br />
+            <button type="submit" value="Skapa">Skapa</button>
+        </form>
+
+    </div>
+</body>
+</html>
