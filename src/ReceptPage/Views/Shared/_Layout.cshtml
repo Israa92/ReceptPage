@@ -12,9 +12,9 @@
 <body>
     <h1 id="title">Våra Recept</h1>
     <div id="menuBar">
-        <a id="menuLink" asp-action="/Home/Index">Home</a>
-        <a id="menuLink" asp-action="/Home/Create">Create Recipe</a>
-        <a id="menuLink" asp-action="/Recepts/Published">See All Recipes</a>
+        <a id="menuLink" asp-controller="Home" asp-action="Index">Home</a>
+        <a id="menuLink" asp-controller="Home" asp-action="Create">Create Recipe</a>
+        <a id="menuLink" asp-controller="Recepts" asp-action="Published">See All Recipes</a>
     </div>
     
     <div id="content">
