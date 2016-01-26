@@ -8,6 +8,7 @@ using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 using ReceptPage.Models;
 using Microsoft.Data.Entity;
+using Microsoft.Extensions.Logging;
 
 namespace ReceptPage
 {
@@ -28,8 +29,21 @@ namespace ReceptPage
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env, 
+            ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole(LogLevel.Error);
+
+            app.UseIISPlatformHandler();
+
+            app.UseStatusCodePagesWithReExecute("/StatusCodes/StatusCode{0}");
+
+            if (env.IsDevelopment())
+                app.UseDeveloperExceptionPage();
+            else
+                app.UseExceptionHandler("/Shared/ErrorPage");
+
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
             app.UseMvcWithDefaultRoute();

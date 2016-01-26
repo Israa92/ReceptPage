@@ -6,6 +6,7 @@ using Microsoft.Data.Entity;
 
 namespace ReceptPage.Models
 {
+    
     public class ReceptsContext : DbContext
     {
         public DbSet<Recept> Recepts { get; set; }
