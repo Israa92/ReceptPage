@@ -6,6 +6,8 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
+using ReceptPage.Models;
+using Microsoft.Data.Entity;
 
 namespace ReceptPage
 {
@@ -15,7 +17,13 @@ namespace ReceptPage
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var connString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Receptdb;Integrated Security=True;Pooling=False";
             services.AddMvc();
+            services
+                .AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<ReceptsContext>(
+                options => options.UseSqlServer(connString));
 
         }
 
