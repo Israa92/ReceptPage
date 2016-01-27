@@ -1,0 +1,13 @@
+﻿@using ReceptPage.Models
+@model List<ListRecipeViewModel>
+<html>
+<body>
+ 
+        @foreach (var item in Model)
+        {
+            
+                @Html.Partial("RecipeBoxInfo", item)
+            
+        }
+</body>
+</html>

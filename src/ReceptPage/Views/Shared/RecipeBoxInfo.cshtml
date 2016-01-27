@@ -1,0 +1,21 @@
+﻿@model ReceptPage.Models.ListRecipeViewModel
+
+<div id="receptContent">
+    <h1 id="receptTitle">@Model.NameOfPlate</h1>
+
+    <div id="receptDisplay">
+        <label asp-for="Name"></label>
+        <br />
+        <b>@Model.Name</b>
+        <br />
+        <label asp-for="Ingredients"></label>
+        <br />
+        <b>@Model.Ingredients</b>
+        <br />
+        <label asp-for="HowToDo"></label>
+        <br />
+        <b>@Model.HowToDo</b>
+        <br />
+    </div>
+</div>
+

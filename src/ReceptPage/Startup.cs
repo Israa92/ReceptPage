@@ -18,12 +18,12 @@ namespace ReceptPage
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Receptdb;Integrated Security=True;Pooling=False";
+            var connString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=ReceptPageDB;Integrated Security=True";
             services.AddMvc();
             services
                 .AddEntityFramework()
                 .AddSqlServer()
-                .AddDbContext<ReceptsContext>(
+                .AddDbContext<RecipesContext>(
                 options => options.UseSqlServer(connString));
 
         }

@@ -10,9 +10,11 @@ namespace ReceptPage.Controllers
 {
     public class HomeController : Controller
     {
+        RecipesContext _context;
         ILogger<HomeController> _logger;
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, RecipesContext context)
         {
+            _context = context;
             _logger = logger;
         }
         public IActionResult Index()
@@ -26,13 +28,25 @@ namespace ReceptPage.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(CreateReceptViewModel viewModel)
+        public IActionResult Create(CreateRecipeViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
                 return View(viewModel);
             }
-            return RedirectToAction("published");
+
+            var recept = new Recipe();
+            recept.Name = viewModel.Name;
+            recept.Age = viewModel.Age;
+            recept.Email = viewModel.Email;
+            recept.NameOfPlate = viewModel.NameOfPlate;
+            recept.Ingredients = viewModel.Ingredients;
+            recept.HowToDo = viewModel.HowToDo;
+
+            _context.Recepts.Add(recept);
+            _context.SaveChanges();
+
+            return RedirectToAction("published", "Recipes");
         }
     }
 }

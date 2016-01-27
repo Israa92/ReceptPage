@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace ReceptPage.Models
 {
-    public class ListReceptViewModel
+    public class ListRecipeViewModel
     {
         [Display(Name = "Namn")]
         public string Name { get; set; }
+
+        [Display(Name = "Målrättens namn")]
+        public string NameOfPlate { get; set; }
+
         [Display(Name = "Ingredienser")]
         public string Ingredients { get; set; }
+
         [Display(Name = "Gör så")]
         public string HowToDo { get; set; }
     }
