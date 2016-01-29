@@ -11,13 +11,15 @@ namespace ReceptPage.Controllers
     [Route("Home")]
     public class HomeController : Controller
     {
-        RecipesContext _context;
+        IRecipeRepository _repository;
         ILogger<HomeController> _logger;
-        public HomeController(ILogger<HomeController> logger, RecipesContext context)
+
+        public HomeController(ILogger<HomeController> logger, IRecipeRepository repository)
         {
-            _context = context;
+            _repository = repository;
             _logger = logger;
         }
+
         [Route("Index")]
         public IActionResult Index()
         {
@@ -29,6 +31,7 @@ namespace ReceptPage.Controllers
         {
             return View();
         }
+
         [Route("Create")]
         [HttpPost]
         public IActionResult Create(CreateRecipeViewModel viewModel)
@@ -37,18 +40,8 @@ namespace ReceptPage.Controllers
             {
                 return View(viewModel);
             }
-
-            var recept = new Recipe();
-            recept.Name = viewModel.Name;
-            recept.Age = viewModel.Age;
-            recept.Email = viewModel.Email;
-            recept.NameOfPlate = viewModel.NameOfPlate;
-            recept.Ingredients = viewModel.Ingredients;
-            recept.HowToDo = viewModel.HowToDo;
-
-            _context.Recepts.Add(recept);
-            _context.SaveChanges();
-
+            
+            _repository.AddRecipe(viewModel);
             return RedirectToAction("published", "Recipes");
         }
     }

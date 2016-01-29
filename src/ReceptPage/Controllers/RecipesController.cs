@@ -19,7 +19,7 @@ namespace ReceptPage.Controllers
         [Route("Published")]
         public IActionResult Published()
         {
-            var receptFromDB = _context.Recepts.ToArray();
+            var receptFromDB = _context.Recipes.ToArray();
             var viewModels = new List<ListRecipeViewModel>();
             foreach (var recept in receptFromDB)
             {
@@ -39,29 +39,5 @@ namespace ReceptPage.Controllers
         {
             return "Raderar id" + id;
         }
-
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Recipe recipe = _context.Recepts.Find(id);
-        //    if (recipe == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(recipe);
-        //}
-
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Recipe recipe = _context.Recepts.Find(id);
-        //    _context.Recepts.Remove(recipe);
-        //    _context.SaveChanges();
-        //    return RedirectToAction("published");
-        //}
     }
 }

@@ -9,7 +9,7 @@ namespace ReceptPage.Models
     
     public class RecipesContext : DbContext
     {
-        public DbSet<Recipe> Recepts { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Recipe>().ToTable("Recipe");

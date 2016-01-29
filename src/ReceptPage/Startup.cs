@@ -19,13 +19,13 @@ namespace ReceptPage
         public void ConfigureServices(IServiceCollection services)
         {
             var connString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=ReceptPageDB;Integrated Security=True";
-            services.AddMvc();
             services
                 .AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<RecipesContext>(
-                options => options.UseSqlServer(connString));
-
+                config => config.UseSqlServer(connString));
+            services.AddTransient<IRecipeRepository, RecipeDBRepository>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
