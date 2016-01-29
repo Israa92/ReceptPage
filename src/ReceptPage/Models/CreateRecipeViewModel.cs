@@ -14,8 +14,8 @@ namespace ReceptPage.Models
 
         [Display(Name= "Ålder")]
         [Range(18, 90, ErrorMessage ="Du måste vara över 18 år")]
-
         public int Age { get; set; }
+
         [Display(Name = "E-mail")]
         [EmailAddress]
         public string Email { get; set; }

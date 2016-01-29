@@ -22,6 +22,7 @@ namespace ReceptPage.Controllers
             foreach (var recept in receptFromDB)
             {
                 var viewModel = new ListRecipeViewModel();
+                viewModel.Id = recept.Id;
                 viewModel.Name = recept.Name;
                 viewModel.NameOfPlate = recept.NameOfPlate;
                 viewModel.Ingredients = recept.Ingredients;
@@ -31,5 +32,34 @@ namespace ReceptPage.Controllers
             }
             return View(viewModels);
         }
+
+        public string Delete(int id)
+        {
+            return "Raderar id" + id;
+        }
+
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Recipe recipe = _context.Recepts.Find(id);
+        //    if (recipe == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(recipe);
+        //}
+
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    Recipe recipe = _context.Recepts.Find(id);
+        //    _context.Recepts.Remove(recipe);
+        //    _context.SaveChanges();
+        //    return RedirectToAction("published");
+        //}
     }
 }
