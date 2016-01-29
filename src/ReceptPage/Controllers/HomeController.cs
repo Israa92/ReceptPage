@@ -17,9 +17,11 @@ namespace ReceptPage.Controllers
             _context = context;
             _logger = logger;
         }
+        
         public IActionResult Index()
         {
-            _logger.LogInformation("HomeController.Index called");
+            //_logger.LogInformation("HomeController.Index called");
+            throw new Exception("FEL");
             return View();
         }
 
