@@ -8,7 +8,6 @@ using Microsoft.Extensions.Logging;
 
 namespace ReceptPage.Controllers
 {
-    [Route("Home")]
     public class HomeController : Controller
     {
         IRecipeRepository _repository;
@@ -19,8 +18,6 @@ namespace ReceptPage.Controllers
             _repository = repository;
             _logger = logger;
         }
-
-        [Route("Index")]
         public IActionResult Index()
         {
             //_logger.LogInformation("HomeController.Index called");
@@ -31,8 +28,6 @@ namespace ReceptPage.Controllers
         {
             return View();
         }
-
-        [Route("Create")]
         [HttpPost]
         public IActionResult Create(CreateRecipeViewModel viewModel)
         {
@@ -40,7 +35,7 @@ namespace ReceptPage.Controllers
             {
                 return View(viewModel);
             }
-            
+
             _repository.AddRecipe(viewModel);
             return RedirectToAction("published", "Recipes");
         }

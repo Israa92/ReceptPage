@@ -7,7 +7,6 @@ using ReceptPage.Models;
 
 namespace ReceptPage.Controllers
 {
-    [Route("Recipes")]
     public class RecipesController : Controller
     {
         RecipesContext _context;
@@ -16,7 +15,6 @@ namespace ReceptPage.Controllers
             _context = context;
         }
 
-        [Route("Published")]
         public IActionResult Published()
         {
             var receptFromDB = _context.Recipes.ToArray();
