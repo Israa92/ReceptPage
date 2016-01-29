@@ -27,6 +27,7 @@ namespace ReceptPage.Controllers
         {
             return View();
         }
+        [Route("Create")]
         [HttpPost]
         public IActionResult Create(CreateRecipeViewModel viewModel)
         {

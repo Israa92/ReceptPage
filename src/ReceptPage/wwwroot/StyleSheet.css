@@ -1,0 +1,125 @@
+﻿body {
+}
+
+#title {
+    color: blue;
+    text-align: center;
+}
+
+#content {
+    width: 500px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+#headImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 130px;
+}
+
+#menuBar {
+    margin-top: 25px;
+}
+
+#menuLink {
+    margin: 10px;
+    padding: 4px 7px 2px 4px;
+    text-decoration: none;
+    border: solid 1px;
+    border-color: #e9b36c;
+    color: #e9b36c;
+}
+
+    #menuLink:hover {
+        background-color: #e9b36c;
+        color: #ffffff;
+    }
+
+#createContent {
+    background-color: antiquewhite;
+    width: 450px;
+    min-height: 500px;
+}
+
+#createTitle {
+    text-align: center;
+    font-size: 26px;
+    color: #ff9200;
+}
+
+#formCreate {
+    width: 450px;
+}
+
+#lableCreate {
+    margin-left: 20px;
+    color: #f9b134;
+}
+
+textarea {
+    margin-left: 20px;
+    max-width: 300px;
+    min-width: 300px;
+}
+
+#txtBoxCreate {
+    margin-left: 20px;
+}
+
+button {
+    margin-left: 270px;
+    color: #ff9200;
+    background-color: #ffffff;
+    border: solid 1px #ff9200;
+    width: 60px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+    button:hover {
+        background-color: #ff9200;
+        color: #ffffff;
+    }
+
+#receptContent {
+    /*background-color: antiquewhite;*/
+    width: 450px;
+    min-height: 200px;
+    border:solid 
+}
+
+#receptTitle {
+    text-align: center;
+    font-size: 26px;
+    color: #ff9200;
+}
+
+#receptDisplay {
+    width: 450px;
+}
+
+b {
+    margin-left: 20px;
+    color: #f9b134;
+}
+
+#lablPublished{
+    font-size:20px;
+
+    margin-left: 15px;
+    color: #f9b134;
+}
+
+#xDelete{
+    float:right;
+    padding:3px 3px 3px 3px;
+    text-decoration:none;
+    font-size:20px;
+}
+
+#imgHome{
+    margin-top:18px;
+    border-radius:10px;
+}
