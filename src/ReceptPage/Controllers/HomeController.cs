@@ -25,11 +25,11 @@ namespace ReceptPage.Controllers
             //throw new Exception("FEL");
             return View();
         }
-        [Route("Create")]
         public IActionResult Create()
         {
             return View();
         }
+        [Route("Create")]
         [HttpPost]
         public IActionResult Create(CreateRecipeViewModel viewModel)
         {
