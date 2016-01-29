@@ -46,7 +46,27 @@ namespace ReceptPage
 
             app.UseStaticFiles();
 
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                name: "Exceptions",
+                template: "Home/ErrorPage",
+                defaults: new { controller = "Exceptions", action = "ErrorPage" }
+                );
+
+                routes.MapRoute(
+                name: "test",
+                template: "Recipes/PageNotFound404",
+                defaults: new { controller = "Exceptions", action = "PageNotFound404" }
+                );
+
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=index}/{id?}"
+
+                        );
+            });
         }
 
         // Entry point for the application.

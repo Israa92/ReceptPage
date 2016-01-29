@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ReceptPage.Controllers
 {
+    [Route("Home")]
     public class HomeController : Controller
     {
         RecipesContext _context;
@@ -17,14 +18,14 @@ namespace ReceptPage.Controllers
             _context = context;
             _logger = logger;
         }
-        
+        [Route("Index")]
         public IActionResult Index()
         {
             //_logger.LogInformation("HomeController.Index called");
             //throw new Exception("FEL");
             return View();
         }
-
+        [Route("Create")]
         public IActionResult Create()
         {
             return View();

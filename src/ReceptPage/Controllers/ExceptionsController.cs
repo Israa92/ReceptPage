@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ReceptPage.Controllers
 {
+    [Route("Exceptions")]
     public class ExceptionsController : Controller
     {
         ILogger<ExceptionsController> _logger;
@@ -17,12 +18,13 @@ namespace ReceptPage.Controllers
             _logger = logger;
         }
 
-        // GET: /<controller>/
+        [Route("ErrorPage")]
         public IActionResult ErrorPage()
         {
             _logger.LogError("Ett fel har inträffat");
             return View();
         }
+        [Route("PageNotFound404")]
         public IActionResult PageNotFound404()
         {
             return View();
