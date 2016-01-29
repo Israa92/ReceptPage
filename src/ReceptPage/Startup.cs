@@ -39,10 +39,10 @@ namespace ReceptPage
 
             app.UseStatusCodePagesWithReExecute("/StatusCodes/StatusCode{0}");
 
-            //if (env.IsDevelopment())
-            //    app.UseDeveloperExceptionPage();
-            //else
-            app.UseExceptionHandler("/Exceptions/ErrorPage");
+            if (env.IsDevelopment())
+                app.UseDeveloperExceptionPage();
+            else
+                app.UseExceptionHandler("/Exceptions/ErrorPage");
 
             app.UseStaticFiles();
 
