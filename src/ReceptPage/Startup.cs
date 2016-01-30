@@ -25,6 +25,7 @@ namespace ReceptPage
                 .AddDbContext<RecipesContext>(
                 config => config.UseSqlServer(connString));
             services.AddTransient<IRecipeRepository, RecipeDBRepository>();
+            //services.AddTransient<IRecipeRepository, RecipeTestRepository>();
             services.AddMvc();
         }
 

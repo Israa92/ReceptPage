@@ -5,12 +5,32 @@ using System.Threading.Tasks;
 
 namespace ReceptPage.Models
 {
-    public class RecipeDBRepository : IRecipeRepository
+    public class RecipeTestRepository : IRecipeRepository
     {
         RecipesContext _context;
-        public RecipeDBRepository(RecipesContext context)
+        static List<Recipe> recipes = new List<Recipe>();
+
+        public RecipeTestRepository(RecipesContext context)
         {
             _context = context;
+
+            recipes.Add(new Recipe { Id = 1, Name = "Boo", Age = 20, Email = "boo@hotmail.com", NameOfPlate = "Pasta", Ingredients = "Pasta", HowToDo = "Pasta" });
+            recipes.Add(new Recipe { Id = 2, Name = "Ann", Age = 20, Email = "boo@hotmail.com", NameOfPlate = "Pasta", Ingredients = "Pasta", HowToDo = "Pasta" });
+            recipes.Add(new Recipe { Id = 3, Name = "Lii", Age = 20, Email = "boo@hotmail.com", NameOfPlate = "Pasta", Ingredients = "Pasta", HowToDo = "Pasta" });
+        }
+
+        public ListRecipeViewModel[] GetAllRecipes()
+        {
+            return recipes
+                .Select(r => new ListRecipeViewModel
+                {
+                    Name = r.Name,
+                    NameOfPlate = r.NameOfPlate,
+                    Ingredients = r.Ingredients,
+                    HowToDo = r.HowToDo
+                })
+                .ToArray();
+                
         }
 
         public void AddRecipe(CreateRecipeViewModel viewModel)

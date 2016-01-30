@@ -18,6 +18,7 @@ namespace ReceptPage.Controllers
             _repository = repository;
             _logger = logger;
         }
+
         public IActionResult Index()
         {
             //_logger.LogInformation("HomeController.Index called");

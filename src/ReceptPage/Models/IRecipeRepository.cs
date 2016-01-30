@@ -8,5 +8,7 @@ namespace ReceptPage.Models
     public interface IRecipeRepository
     {
         void AddRecipe(CreateRecipeViewModel viewModel);
+        void DisplayRecipe(List<ListRecipeViewModel> viewModels);
+        //ListRecipeViewModel[] GetAllRecipes();
     }
 }
