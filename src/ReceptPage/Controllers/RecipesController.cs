@@ -9,28 +9,19 @@ namespace ReceptPage.Controllers
 {
     public class RecipesController : Controller
     {
-        RecipesContext _context;
-        public RecipesController(RecipesContext context)
+        IRecipeRepository _repository;
+        public RecipesController(IRecipeRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
-        public IActionResult Published()
+        public IActionResult Published(List<ListRecipeViewModel> viewModels)
         {
-            var receptFromDB = _context.Recipes.ToArray();
-            var viewModels = new List<ListRecipeViewModel>();
-            foreach (var recept in receptFromDB)
-            {
-                var viewModel = new ListRecipeViewModel();
-                viewModel.Id = recept.Id;
-                viewModel.Name = recept.Name;
-                viewModel.NameOfPlate = recept.NameOfPlate;
-                viewModel.Ingredients = recept.Ingredients;
-                viewModel.HowToDo = recept.HowToDo;
 
-                viewModels.Add(viewModel);
-            }
+            _repository.DisplayRecipe(viewModels);
             return View(viewModels);
+
+            //return View(_repository.GetAllRecipes());
         }
 
         public string Delete(int id)

@@ -84,42 +84,49 @@ button {
     }
 
 #receptContent {
-    /*background-color: antiquewhite;*/
+    background-color: antiquewhite;
     width: 450px;
-    min-height: 200px;
-    border:solid 
+    min-height: 310px;
+    border: solid 1px #f9b134;
+    margin: 15px;
+    margin-bottom:20px;
 }
 
 #receptTitle {
     text-align: center;
-    font-size: 26px;
+    font-size: 20px;
     color: #ff9200;
+    text-transform: capitalize;
 }
 
 #receptDisplay {
     width: 450px;
+    min-height: 200px;
 }
-
-b {
+#by{
+    float:right;
+    color:#43a764;
+}
+p {
     margin-left: 20px;
     color: #f9b134;
 }
 
-#lablPublished{
-    font-size:20px;
-
+#lablPublished {
+    text-decoration:underline;
+    font-size: 20px;
     margin-left: 15px;
     color: #f9b134;
 }
 
-#xDelete{
-    float:right;
-    padding:3px 3px 3px 3px;
-    text-decoration:none;
-    font-size:20px;
+#xDelete {
+    float: right;
+    padding: 3px 3px 3px 3px;
+    text-decoration: none;
+    font-size: 12px;
 }
 
-#imgHome{
-    margin-top:18px;
-    border-radius:10px;
+#imgHome {
+    margin-top: 18px;
+    border-radius: 10px;
 }
