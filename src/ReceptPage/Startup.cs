@@ -37,7 +37,7 @@ namespace ReceptPage
 
             app.UseIISPlatformHandler();
 
-            app.UseStatusCodePagesWithReExecute("/StatusCodes/StatusCode{0}");
+            app.UseStatusCodePagesWithReExecute("/Exceptions/PageNotFound{0}");
 
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
