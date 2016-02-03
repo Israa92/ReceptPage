@@ -22,7 +22,7 @@ namespace ReceptPage.Controllers
             _logger.LogError("Ett fel har inträffat");
             return View();
         }
-        public IActionResult PageNotFound404()
+        public IActionResult StatusCode404()
         {
             return View();
         }

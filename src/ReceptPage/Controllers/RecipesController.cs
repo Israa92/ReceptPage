@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using ReceptPage.Models;
+using ReceptPage.ViewModels;
 
 namespace ReceptPage.Controllers
 {
@@ -15,18 +16,27 @@ namespace ReceptPage.Controllers
             _repository = repository;
         }
 
-        public IActionResult Published(List<ListRecipeViewModel> viewModels)
+        public IActionResult Published()
         {
-
-            _repository.DisplayRecipe(viewModels);
-            return View(viewModels);
-
-            //return View(_repository.GetAllRecipes());
+            return View(_repository.GetAllRecipes());
+        }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            _repository.Delete(id);
+            return RedirectToAction("Published");
         }
 
-        public string Delete(int id)
+        public IActionResult Edit(int id)
         {
-            return "Raderar id" + id;
+            return View(_repository.Edit(id));
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EditRecipeViewModel recipeModel)
+        {
+            _repository.Edit(recipeModel);
+            return RedirectToAction("Published");
         }
     }
 }

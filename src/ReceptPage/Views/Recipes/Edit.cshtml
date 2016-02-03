@@ -1,0 +1,28 @@
+﻿@model EditRecipeViewModel
+<html>
+<body>
+    <form asp-controller="Recipes" asp-action="Edit">
+        <label id="lableCreate" asp-for="Name"></label>
+        <br />
+        <input id="txtBoxCreate" asp-for="Name" />
+        <br />
+        <br />
+        <label id="lableCreate" asp-for="NameOfPlate"></label>
+        <br />
+        <input id="txtBoxCreate" asp-for="NameOfPlate" />
+        <br />
+        <br />
+        <label id="lableCreate" asp-for="Ingredients"></label>
+        <br />
+        <textarea asp-for="Ingredients"></textarea>
+        <br />
+        <br />
+        <label id="lableCreate" asp-for="HowToDo"></label>
+        <br />
+        <textarea asp-for="HowToDo"></textarea>
+        <br />
+        <br />
+        <input id="spara" type="submit" value="Spara"/>
+    </form>
+</body>
+</html>

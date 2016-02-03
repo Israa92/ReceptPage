@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReceptPage.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,20 +28,55 @@ namespace ReceptPage.Models
             _context.SaveChanges();
         }
 
-        public void DisplayRecipe(List<ListRecipeViewModel> viewModels)
+        public ListRecipeViewModel[] GetAllRecipes()
         {
-            var receptFromDB = _context.Recipes.ToArray();
-            foreach (var recept in receptFromDB)
-            {
-                var viewModel = new ListRecipeViewModel();
-                viewModel.Id = recept.Id;
-                viewModel.Name = recept.Name;
-                viewModel.NameOfPlate = recept.NameOfPlate;
-                viewModel.Ingredients = recept.Ingredients;
-                viewModel.HowToDo = recept.HowToDo;
+            return _context.Recipes
+                .Select(r => new ListRecipeViewModel
+                {
+                    Id = r.Id,
+                    Name = r.Name,
+                    NameOfPlate = r.NameOfPlate,
+                    Ingredients = r.Ingredients,
+                    HowToDo = r.HowToDo
+                })
+                .ToArray();
 
-                viewModels.Add(viewModel);
-            }
+        }
+
+        public void Delete(int id)
+        {
+            Recipe recipe = _context.Recipes.FirstOrDefault(r => r.Id == id);
+
+            _context
+                .Recipes
+                .Remove(recipe);
+
+            _context.SaveChanges();
+        }
+
+        public EditRecipeViewModel Edit(int id)
+        {
+            var recipe = _context.Recipes.FirstOrDefault(r => r.Id == id);
+            return new EditRecipeViewModel
+            {
+                Name = recipe.Name,
+                NameOfPlate = recipe.NameOfPlate,
+                Ingredients = recipe.Ingredients,
+                HowToDo = recipe.HowToDo
+            };
+            
+        }
+
+        public void Edit(EditRecipeViewModel editModel)
+        {
+            var recipe = _context.Recipes.FirstOrDefault(r => r.Id == editModel.Id);
+
+            recipe.Name = editModel.Name;
+            recipe.NameOfPlate = editModel.NameOfPlate;
+            recipe.Ingredients = editModel.Ingredients;
+            recipe.HowToDo = editModel.HowToDo;
+
+            _context.SaveChanges();
         }
     }
 }

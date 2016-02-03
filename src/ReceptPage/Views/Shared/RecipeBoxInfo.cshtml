@@ -1,19 +1,24 @@
-﻿@model ReceptPage.Models.ListRecipeViewModel
+﻿@model ListRecipeViewModel
 
 <div id="receptContent">
-    <a id="xDelete" asp-controller="Recipes" asp-action="Delete" asp-route-id="@Model.Id">Redigera</a>
-    <br />
-    <h2 id="receptTitle">@Model.NameOfPlate</h2>
-
     <div id="receptDisplay">
+        <h2 id="receptTitle">@Model.NameOfPlate</h2>
+        <b id="by">@Model.Name</b>
+        <br />
+        <br />
         <label id="lablPublished" asp-for="Ingredients"></label>
         <p>@Model.Ingredients</p>
         <br />
         <br />
-        <hr />
         <label id="lablPublished" asp-for="HowToDo"></label>
         <p>@Model.HowToDo</p>
     </div>
-    <b id="by">@Model.Name</b>
+    <br />
+    <div id="buttns">
+        <form asp-controller="Recipes" asp-action="Delete" asp-route-id="@Model.Id">
+            <input id="xDelete" type="submit" value="Radera" />
+        </form>
+        <a id="editLink" asp-action="edit" asp-route-id="@Model.Id">Redigera</a>
+    </div>
 </div>
 

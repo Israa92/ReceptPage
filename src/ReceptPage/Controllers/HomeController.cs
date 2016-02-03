@@ -21,8 +21,6 @@ namespace ReceptPage.Controllers
 
         public IActionResult Index()
         {
-            //_logger.LogInformation("HomeController.Index called");
-            //throw new Exception("FEL");
             return View();
         }
         public IActionResult Create()

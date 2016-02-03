@@ -24,8 +24,7 @@ namespace ReceptPage
                 .AddSqlServer()
                 .AddDbContext<RecipesContext>(
                 config => config.UseSqlServer(connString));
-            services.AddTransient<IRecipeRepository, RecipeDBRepository>();
-            //services.AddTransient<IRecipeRepository, RecipeTestRepository>();
+            services.AddTransient<IRecipeRepository, RecipeTestRepository>();
             services.AddMvc();
         }
 
@@ -38,7 +37,7 @@ namespace ReceptPage
 
             app.UseIISPlatformHandler();
 
-            app.UseStatusCodePagesWithReExecute("/StatusCodes/StatusCode{0}");
+            app.UseStatusCodePagesWithReExecute("/Exceptions/StatusCode{0}");
 
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
@@ -58,8 +57,8 @@ namespace ReceptPage
 
                 routes.MapRoute(
                 name: "test",
-                template: "Recipes/PageNotFound404",
-                defaults: new { controller = "Exceptions", action = "PageNotFound404" }
+                template: "Recipes/StatusCode404",
+                defaults: new { controller = "Exceptions", action = "StatusCode404" }
                 );
 
                 routes.MapRoute(
