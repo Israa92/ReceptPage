@@ -86,47 +86,107 @@ button {
 #receptContent {
     background-color: antiquewhite;
     width: 450px;
-    min-height: 310px;
+    min-height: 425px;
     border: solid 1px #f9b134;
     margin: 15px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 #receptTitle {
-    text-align: center;
+    text-align: left;
+    margin-left: 6px;
     font-size: 20px;
-    color: #ff9200;
+    color: #c57d00;
     text-transform: capitalize;
+    border-bottom: solid 1px;
+    border-bottom-right-radius: 15px;
 }
 
 #receptDisplay {
-    width: 450px;
-    min-height: 200px;
+    width: 430px;
+    min-height: 250px;
 }
-#by{
-    float:right;
-    color:#43a764;
+
+#by {
+    float: left;
+    color: #c57d00;
+    margin-left: 6px;
 }
+
 p {
     margin-left: 20px;
     color: #f9b134;
 }
 
 #lablPublished {
-    text-decoration:underline;
+    text-decoration: underline;
     font-size: 20px;
-    margin-left: 15px;
-    color: #f9b134;
+    margin-left: 6px;
+    color: #c57d00;
 }
 
 #xDelete {
     float: right;
-    padding: 3px 3px 3px 3px;
+    background: #ff9200;
+    color: #FFF;
+    padding: 5px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #d78c26;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#editLink {
+    float: right;
+    padding: 5px 10px;
+    margin-right: 8px;
     text-decoration: none;
-    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background: #ff9200;
+    color: #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #d78c26;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#buttns {
+    width: 155px;
+    float: right;
+    margin-right: 9px;
 }
 
 #imgHome {
     margin-top: 18px;
     border-radius: 10px;
+}
+
+#spara {
+    float: right;
+    padding: 5px 10px;
+    margin-right: 8px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background: #ff9200;
+    color: #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #d78c26;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
 }
