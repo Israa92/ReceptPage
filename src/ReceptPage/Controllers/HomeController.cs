@@ -7,18 +7,22 @@ using ReceptPage.Models;
 using Microsoft.Extensions.Logging;
 
 namespace ReceptPage.Controllers
-{
+
+{ 
+
     public class HomeController : Controller
+{
+    IRecipeRepository _repository;
+    ILogger<HomeController> _logger;
+
+    public HomeController(ILogger<HomeController> logger, IRecipeRepository repository)
     {
-        IRecipeRepository _repository;
-        ILogger<HomeController> _logger;
+        _repository = repository;
+        _logger = logger;
+    }
 
-        public HomeController(ILogger<HomeController> logger, IRecipeRepository repository)
-        {
-            _repository = repository;
-            _logger = logger;
-        }
 
+        [Route("Recipes/Create")]
         public IActionResult Index()
         {
             //_logger.LogInformation("HomeController.Index called");
